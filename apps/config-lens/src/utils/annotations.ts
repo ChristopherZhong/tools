@@ -1,5 +1,5 @@
 import { EditorView, Decoration, DecorationSet, WidgetType, ViewPlugin, ViewUpdate } from '@codemirror/view';
-import { syntaxTree } from '@codemirror/language';
+import { ensureSyntaxTree, syntaxTree } from '@codemirror/language';
 import { EditorState } from '@codemirror/state';
 
 export const annotationTheme = EditorView.theme({
@@ -42,10 +42,10 @@ export function computeAnnotations(
   // Optimization: Fast-path short-circuits 95%+ of non-container AST nodes before doing key computation,
   // and uses numeric range encoding in Set<number> to eliminate HeapNumber/BigInt allocations.
   const visitedNodes = new Set<number>();
-  const tree = syntaxTree(state);
   const ranges = visibleRanges && visibleRanges.length > 0
     ? visibleRanges
     : [{ from: 0, to: state.doc.length }];
+  const tree = ensureSyntaxTree(state, Math.max(...ranges.map(({ to }) => to))) ?? syntaxTree(state);
 
   for (const { from, to } of ranges) {
     // Optimization: Cache active line range to avoid redundant state.doc.lineAt(node.from) document rope
