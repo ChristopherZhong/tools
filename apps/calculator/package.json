@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "type": "module",
   "engines": {
-    "node": ">=24.22.2"
+    "node": ">=24.22.3"
   },
   "scripts": {
     "dev": "vite",
