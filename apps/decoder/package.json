@@ -19,16 +19,16 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@storybook/addon-docs": "^10.6.8",
-    "@storybook/web-components": "^10.6.8",
-    "@storybook/web-components-vite": "^10.6.8",
+    "@storybook/addon-docs": "^10.6.9",
+    "@storybook/web-components": "^10.6.9",
+    "@storybook/web-components-vite": "^10.6.9",
     "@typescript-eslint/eslint-plugin": "^8.74.0",
     "@typescript-eslint/parser": "^8.74.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-storybook": "10.6.8",
+    "eslint-plugin-storybook": "10.6.9",
     "happy-dom": "^21.0.4",
     "jiti": "^2.7.0",
-    "storybook": "^10.6.8",
+    "storybook": "^10.6.9",
     "vite": "^8.3.8",
     "vitest": "^5.1.1"
   }
